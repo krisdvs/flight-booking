@@ -76,3 +76,43 @@ spec:
         ports:
         - containerPort: 8001
 
+---
+
+  
+kind: Service
+apiVersion: v1
+metadata:
+  name: add-service
+spec:
+  type: NodePort
+  selector:
+    app: add-service
+  ports:
+  - protocol: TCP
+    targetPort: 8091
+    port: 8091
+    nodePort: 30810
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: add-deployment
+  labels:
+    app: add-service
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: add-service
+  template:
+    metadata:
+      labels:
+        app: add-service
+    spec:
+      containers:
+      - name: add-service
+        image: srahulgurnule/search:0.$BUILD_NUMBER
+        ports:
+        - containerPort: 8091
