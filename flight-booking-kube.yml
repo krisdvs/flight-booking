@@ -113,6 +113,6 @@ spec:
     spec:
       containers:
       - name: add-service
-        image: srahulgurnule/search:0.$BUILD_NUMBER
+        image: srahulgurnule/add:0.$BUILD_NUMBER
         ports:
         - containerPort: 8091
