@@ -152,9 +152,9 @@ spec:
         ports:
         - containerPort: 8070
         
-  ---
+ ---
   
-  kind: Service
+kind: Service
 apiVersion: v1
 metadata:
   name: fares-service
@@ -189,5 +189,4 @@ spec:
         image: srahulgurnule/fares:0.$BUILD_NUMBER
         ports:
         - containerPort: 8075
-        
         
