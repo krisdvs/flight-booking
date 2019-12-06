@@ -42,7 +42,7 @@ pipeline {
             		steps {
                 		kubernetesDeploy(
                     			kubeconfigId: 'kubeconfig',
-                    			configs: 'flight-booking-kube.yml'
+                    			configs: 'flight-booking-kube1.yml'
                 		)
             		}
         	}
